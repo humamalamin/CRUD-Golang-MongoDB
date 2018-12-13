@@ -19,9 +19,11 @@ func main(){
 
 	profileRepository := repository.NewProfileRepositoryMongo(db,"profile")
 
-	saveProfile(profileRepository)
+	//saveProfile(profileRepository)
 	//updateProfile(profileRepository)
 	//deleteProfile(profileRepository)
+
+	getProfile("U1",profileRepository)
 }
 
 func saveProfile(profileRepository repository.ProfileRepository){
@@ -70,5 +72,19 @@ func deleteProfile(profileRepository repository.ProfileRepository)  {
 	}else{
 		fmt.Println("Profile deleted...")
 	}
+
+}
+
+func getProfile(id string, profileRepository repository.ProfileRepository) {
+	profile, err := profileRepository.FindByID(id)
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println(profile.ID)
+	fmt.Println(profile.FirstName)
+	fmt.Println(profile.LastName)
+	fmt.Println(profile.Email)
 
 }
