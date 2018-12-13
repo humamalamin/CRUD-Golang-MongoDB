@@ -1,0 +1,6 @@
+hash: 845cab1c70c17db937d58a542f3854907821502083991ebe27aebcf3f90e650e
+updated: 2018-12-13T05:50:37.943505+07:00
+imports:
+- name: gopkg.in/mgo.v2
+  version: 9856a29383ce1c59f308dd1cf0363a79b5bef6b5
+testImports: []
